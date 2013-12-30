@@ -8,14 +8,14 @@
   <engines>
     <engine name="cordova" version=">=3.0.0" />
   </engines>
-  <js-module src="www/extract-zip-file.js" name="extract-zip-file">
-    <clobbers target="extract-zip-file" />
+  <js-module src="www/ExtractZipFile.js" name="ExtractZipFile">
+    <clobbers target="extractZipFile" />
   </js-module>
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
-        <feature name="ExtractZipFile">
-            <param name="ios-package" value="org.reallyenglish.extract-zip-file"/>
-        </feature>
+      <feature name="ExtractZipFile">
+          <param name="ios-package" value="org.reallyenglish.extract-zip-file"/>
+      </feature>
     </config-file>
     <header-file src="src/ios/ExtractZipFile.h" />
     <source-file src="src/ios/ExtractZipFile.m" />

@@ -7,15 +7,13 @@
  * Copyright (c) Pobl Creative Cyf. 2012
  *
  */
-var ExtractZipFile = function(){
-};
+var ExtractZipFile = function(){};
 
 cordova.addConstructor(function(){
-    if(!window.plugins) window.plugins = {};
-    window.plugins.extractZipFile = new ExtractZipFile();
+  if(!window.plugins) window.plugins = {};
+  window.plugins.extractZipFile = new ExtractZipFile();
 });
 
-ExtractZipFile.prototype.extractFile = function(file, destination, successCallback, errorCallback)
-{
+ExtractZipFile.prototype.extractFile = function(file, destination, successCallback, errorCallback){
   return cordova.exec(successCallback, errorCallback, "ExtractZipFile", "extract", [file, destination]);
 };
