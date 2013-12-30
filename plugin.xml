@@ -9,7 +9,7 @@
     <engine name="cordova" version=">=3.0.0" />
   </engines>
   <js-module src="www/ExtractZipFile.js" name="ExtractZipFile">
-    <clobbers target="extractZipFile" />
+    <clobbers target="plugins.extractZipFile" />
   </js-module>
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
