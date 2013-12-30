@@ -14,7 +14,7 @@
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
       <feature name="ExtractZipFile">
-        <param name="ios-package" value="org.reallyenglish.extract-zip-file"/>
+        <param name="ios-package" value="ExtractZipFile"/>
       </feature>
     </config-file>
 
