@@ -1,7 +1,5 @@
 package org.reallyenglish;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -32,8 +30,7 @@ public class ExtractZipFile extends CordovaPlugin {
             outputDirectory += outputDirectory.endsWith(File.separator) ? "" : File.separator;
 
             File file = new File(filename);
-            FileInputStream fis = new FileInputStream(file);
-            ZipInputStream zis = new ZipInputStream(new BufferedInputStream(fis));
+            ZipInputStream zis = new ZipInputStream(new FileInputStream(file));
 
             ZipEntry entry;
 
@@ -48,7 +45,7 @@ public class ExtractZipFile extends CordovaPlugin {
                 } else {
                     outFile.getParentFile().mkdirs();
                     if(outFile.exists() || outFile.createNewFile()){
-                        FileOutputStream fout = new FileOutputStream(file);
+                        FileOutputStream fout = new FileOutputStream(outFile);
                         int count;
                         while ((count = zis.read(buffer)) != -1) {
                             fout.write(buffer, 0, count);
